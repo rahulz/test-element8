@@ -29,6 +29,7 @@ class Share(models.Model):
     shareholder = models.OneToOneField(ShareHolder, on_delete=models.CASCADE, blank=True)
     duration = models.PositiveIntegerField(help_text='Duration in years')
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    # installment_type: Set values as recurring X times per year for easy calculation
     installment_type = models.IntegerField(choices=((12, 'Monthly'), (4, 'Quarterly'), (1, 'Annual')))
     start_date = models.DateField()
 
