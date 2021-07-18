@@ -17,3 +17,19 @@ period and amount)
 Search share details (search for a shareholder details by entering his email address)
 Excel Report based on search result
 It is desirable that you come up with a good layout, especially for the listing and reports
+   
+### How to setup:
+
+- Install python version: 3.x (tested on 3.9) 
+- Optional: Setup and activate virtualenv
+- `pip install -r requirements.txt`
+- `python manage.py createsuperuser` (Only super users are allows to log in)
+
+### Dependencies
+
+
+- `Django==3.2.5`
+- `django-countries==7.2.1`
+- `django-crispy-forms==1.12.0`
+- `django-phonenumber-field==5.2.0`
+- `django-tables2==2.4.0`
