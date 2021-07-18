@@ -1,0 +1,9 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="installment" value="{{ record.id }}">
+    {% if record.paid %}
+        <input type="submit" value="Mark unpaid" class="btn btn-danger" id="submit-id-submit">
+    {% else %}
+        <input type="submit" value="Mark paid" class="btn btn-success" id="submit-id-submit">
+    {% endif %}
+</form>
