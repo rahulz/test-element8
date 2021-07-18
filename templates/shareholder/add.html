@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Shareholder Management | Login {% endblock %}
+
+
+{% block body %}
+
+    <div class="row ">
+
+
+        <div class="col-6 login">
+            <h2 class="subhead">Add Shareholder</h2>
+            <form action='' method='post'>
+                {% crispy form %}
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

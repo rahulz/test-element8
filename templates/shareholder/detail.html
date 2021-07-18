@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% load django_tables2 %}
+
+
+{% block title %} Shareholder Management | Login {% endblock %}
+
+
+{% block body %}
+
+    <div class="row ">
+        {% if not share.data %}
+            <div class="col-6 shareholder-detail">
+            <h2 class="subhead">Add share details</h2>
+            <form action='' method='post'>
+                {% crispy form %}
+            </form>
+
+        {% else %}
+            <div class="col-12 shareholder-detail">
+            <h2 class="subhead">Share Details</h2>
+            {% render_table share %}
+            <h2>
+                Installments
+            </h2>
+            {% render_table installments %}
+
+        {% endif %}
+
+
+        </div>
+
+        </div>
+    </div>
+{% endblock %}

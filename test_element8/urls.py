@@ -13,9 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from crispy_forms.helper import FormHelper
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
+from django.urls import path, include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+from test_element8.settings import STATIC_URL
+from utils.forms import AuthForm
+
+urlpatterns = [path('admin/', admin.site.urls),
+               path('login/', LoginView.as_view(template_name='login.html', form_class=AuthForm)),
+               path('', include('shareholder.urls')),
+               ] + static(STATIC_URL, document_root='static')

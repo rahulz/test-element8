@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load django_tables2 %}
+
+
+{% block title %} Shareholder Management | Login {% endblock %}
+
+
+{% block body %}
+
+    <div class="row ">
+
+
+        <div class="col-12 shareholder-list">
+            <h2 class="subhead">Shareholders</h2>
+            {% if not table.data %}
+                <div>No shareholders added. Get started by <a href="add/">adding one</a></div>
+
+            {% else %}
+                {% render_table table %}
+            {% endif %}
+
+
+        </div>
+        <div class="left-action">
+            <a href="/add">
+                <button class="btn btn-primary">Add</button>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
