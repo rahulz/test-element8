@@ -19,11 +19,10 @@ Excel Report based on search result
 It is desirable that you come up with a good layout, especially for the listing and reports
    
 ### How to setup:
-
-- Install python version: 3.x (tested on 3.9) 
+- Install Python: Version: 3.x (tested on 3.9) 
 - Optional: Setup and activate virtualenv
 - `pip install -r requirements.txt`
-- `python manage.py createsuperuser` (Only super users are allows to log in)
+- `python manage.py createsuperuser` (Only super users are allowed to log in)
 
 ### Dependencies
 
